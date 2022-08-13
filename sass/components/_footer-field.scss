@@ -44,6 +44,8 @@
 }
 .footer__btn {
   @include button(28px);
+  display: flex;
+  align-items: center;
 
   &:hover,
   &:focus {
