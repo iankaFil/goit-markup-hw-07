@@ -20,39 +20,23 @@
 
 .form__checkbox {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
   transition: border-color $animation;
-
-  &:checked + .form__icon-check {
-    background-color: $accentColor;
-    border-color: $accentColor;
-  }
 }
 
 .form__icon-check {
-  display: inline-block;
-  margin-right: 8px;
-  width: 16px;
-  height: 15px;
+  background-size: contain;
+  background-origin: border-box;
+  margin-right: 7px;
+  fill: $whiteColor;
   border: 2px solid $textColor;
   border-radius: 2px;
-  transition: fill $animation, border $animation;
-}
+  transition: border $animation, background-color $animation,
+    border-color $animation;
 
-.form__icon-check--active {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  border-color: transparent;
+  .form__checkbox:checked + & {
+    background-color: $accentColor;
+    border-color: $accentColor;
+  }
 }
 
 .form__btn-thumb {
